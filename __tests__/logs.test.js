@@ -27,7 +27,7 @@ describe('logs routes', () => {
     });
   });
 
-  it.only('creates a new log via POST', async() => {
+  it('creates a new log via POST', async() => {
     const res = await request(app)
       .post('/api/v1/logs')
       .send(
@@ -53,7 +53,7 @@ describe('logs routes', () => {
     });
   });
 
-  it.only('finds a log by id via GET', async() => {
+  it('finds a log by id via GET', async() => {
     const log = await Log.insert({
       dateOfEvent: '2020-12-15',
       notes: [
@@ -70,7 +70,7 @@ describe('logs routes', () => {
     expect(res.body).toEqual(log);
   });
 
-  it.only('finds all logs via GET', async() => {
+  it('finds all logs via GET', async() => {
     const logs = await Promise.all([
       { dateOfEvent: '2020-12-03',
         notes: [
@@ -104,7 +104,7 @@ describe('logs routes', () => {
     expect(res.body).toHaveLength(logs.length);
   });
 
-  it.only('updates a log via PUT', async() => {
+  it('updates a log via PUT', async() => {
     const log = await log.insert({
       dateOfEvent: '2020-12-15',
       notes: [
@@ -140,7 +140,7 @@ describe('logs routes', () => {
 
   });
 
-  it.only('removes a log via DELETE', async() => {
+  it('removes a log via DELETE', async() => {
     const log = await Log.insert({
       dateOfEvent: '2020-12-15',
       notes: [
