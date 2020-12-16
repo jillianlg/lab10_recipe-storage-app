@@ -19,7 +19,7 @@ describe('recipe-lab routes', () => {
       ],
       ingredients: [
         {
-          name: 'flour', 
+          name: 'sugar', 
           measurement: 'cup', 
           amount: 1
         }
@@ -40,7 +40,7 @@ describe('recipe-lab routes', () => {
         ],
         ingredients: [
           {
-            name: 'flour', 
+            name: 'sugar', 
             measurement: 'cup', 
             amount: 1
           }
@@ -57,7 +57,7 @@ describe('recipe-lab routes', () => {
       ],
       ingredients: [
         {
-          name: 'flour', 
+          name: 'sugar', 
           measurement: 'cup', 
           amount: 1
         }
@@ -129,7 +129,7 @@ describe('recipe-lab routes', () => {
       ],
       ingredients: [
         {
-          name: 'flour', 
+          name: 'sugar', 
           measurement: 'cup', 
           amount: 1
         }
@@ -148,7 +148,7 @@ describe('recipe-lab routes', () => {
         ],
         ingredients: [
           {
-            name: 'flour', 
+            name: 'sugar', 
             measurement: 'cup', 
             amount: 1
           }
@@ -166,7 +166,7 @@ describe('recipe-lab routes', () => {
           ],
           ingredients: [
             {
-              name: 'flour', 
+              name: 'sugar', 
               measurement: 'cup', 
               amount: 1
             }
@@ -186,7 +186,7 @@ describe('recipe-lab routes', () => {
       ],
       ingredients: [
         {
-          name: 'flour', 
+          name: 'sugar', 
           measurement: 'cup', 
           amount: 1
         }

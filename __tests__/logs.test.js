@@ -19,7 +19,7 @@ describe('logs routes', () => {
       ],
       ingredients: [
         {
-          name: 'flour', 
+          name: 'sugar', 
           measurement: 'cup', 
           amount: 1
         }
@@ -105,7 +105,7 @@ describe('logs routes', () => {
   });
 
   it('updates a log via PUT', async() => {
-    const log = await log.insert({
+    const log = await Log.insert({
       dateOfEvent: '2020-12-15',
       notes: [
         'too much salt',
