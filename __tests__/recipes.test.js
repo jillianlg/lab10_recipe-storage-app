@@ -16,6 +16,13 @@ describe('recipe-lab routes', () => {
         'mix ingredients',
         'put dough on cookie sheet',
         'bake for 10 minutes'
+      ],
+      ingredients: [
+        {
+          name: 'flour', 
+          measurement: 'cup', 
+          amount: 1
+        }
       ]
     });
   });
@@ -30,6 +37,13 @@ describe('recipe-lab routes', () => {
           'mix ingredients',
           'put dough on cookie sheet',
           'bake for 10 minutes'
+        ],
+        ingredients: [
+          {
+            name: 'flour', 
+            measurement: 'cup', 
+            amount: 1
+          }
         ]
       });
     expect(res.body).toEqual({
@@ -40,6 +54,13 @@ describe('recipe-lab routes', () => {
         'mix ingredients',
         'put dough on cookie sheet',
         'bake for 10 minutes'
+      ],
+      ingredients: [
+        {
+          name: 'flour', 
+          measurement: 'cup', 
+          amount: 1
+        }
       ]
     });
   });
