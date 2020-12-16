@@ -3,6 +3,7 @@ const pool = require('../lib/utils/pool');
 const request = require('supertest');
 const app = require('../lib/app');
 const Recipe = require('../lib/models/recipe');
+const Log = require('../lib/models/Log');
 
 describe('logs routes', () => {
   let recipe;
@@ -52,4 +53,22 @@ describe('logs routes', () => {
     });
   });
 
+  it.only('finds a log by id via GET', async() => {
+    const log = await Log.insert({
+      dateOfEvent: '2020-12-15',
+      notes: [
+        'too much salt',
+        'shorten cook time'
+      ],
+      rating: '3.0',
+      recipeId: recipe.id  
+    });
+
+    const res = await request(app)
+      .get(`/api/v1/logs/${log.id}`);
+
+    expect(res.body).toEqual(log);
+  });
+
+  
 });
