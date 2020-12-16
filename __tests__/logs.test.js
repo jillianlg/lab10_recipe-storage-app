@@ -103,4 +103,40 @@ describe('logs routes', () => {
     expect(res.body).toEqual(expect.arrayContaining(logs));
     expect(res.body).toHaveLength(logs.length);
   });
+
+  it.only('updates a log via PUT', async() => {
+    const log = await log.insert({
+      dateOfEvent: '2020-12-15',
+      notes: [
+        'too much salt',
+        'shorten cook time'
+      ],
+      rating: '3.0',
+      recipeId: recipe.id  
+    });
+
+    const res = await request(app)
+      .put(`/api/v1/logs/${log.id}`)
+      .send({
+        dateOfEvent: '2020-12-15',
+        notes: [
+          'too much salt',
+          'shorten cook time'
+        ],
+        rating: '3.5',
+        recipeId: recipe.id  
+      });
+    
+    expect(res.body).toEqual({
+      id: log.id,
+      dateOfEvent: expect.any(String),
+      notes: [
+        'too much salt',
+        'shorten cook time'
+      ],
+      rating: '3.5',
+      recipeId: recipe.id  
+    });
+
+  });
 });
