@@ -70,5 +70,37 @@ describe('logs routes', () => {
     expect(res.body).toEqual(log);
   });
 
-  
+  it.only('finds all logs via GET', async() => {
+    const logs = await Promise.all([
+      { dateOfEvent: '2020-12-03',
+        notes: [
+          'cook time just right'
+        ],
+        rating: '4.0',
+        recipeId: recipe.id 
+      },
+      { dateOfEvent: '2020-12-15',
+        notes: [
+          'too much salt',
+          'shorten cook time'
+        ],
+        rating: '3.0',
+        recipeId: recipe.id  
+      },
+      { dateOfEvent: '2020-12-18',
+        notes: [
+          'increase salt',
+          'lengthen cook time'
+        ],
+        rating: '3.5',
+        recipeId: recipe.id  
+      }
+    ].map(log => Log.insert(log)));
+
+    const res = await request(app)
+      .get('/api/v1/logs');
+    
+    expect(res.body).toEqual(expect.arrayContaining(logs));
+    expect(res.body).toHaveLength(logs.length);
+  });
 });
