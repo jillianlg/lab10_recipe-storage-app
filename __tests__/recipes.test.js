@@ -128,6 +128,13 @@ describe('recipe-lab routes', () => {
         'put dough on cookie sheet',
         'bake for 10 minutes'
       ],
+      ingredients: [
+        {
+          name: 'flour', 
+          measurement: 'cup', 
+          amount: 1
+        }
+      ]
     });
 
     return request(app)
@@ -139,6 +146,13 @@ describe('recipe-lab routes', () => {
           'mix ingredients',
           'put dough on cookie sheet',
           'bake for 10 minutes'
+        ],
+        ingredients: [
+          {
+            name: 'flour', 
+            measurement: 'cup', 
+            amount: 1
+          }
         ]
       })
       .then(res => {
@@ -150,6 +164,13 @@ describe('recipe-lab routes', () => {
             'mix ingredients',
             'put dough on cookie sheet',
             'bake for 10 minutes'
+          ],
+          ingredients: [
+            {
+              name: 'flour', 
+              measurement: 'cup', 
+              amount: 1
+            }
           ]
         });
       });
@@ -164,6 +185,13 @@ describe('recipe-lab routes', () => {
         'put dough on cookie sheet',
         'bake for 10 minutes'
       ],
+      ingredients: [
+        {
+          name: 'flour', 
+          measurement: 'cup', 
+          amount: 1
+        }
+      ]
     });
     
     const response = await request(app)
