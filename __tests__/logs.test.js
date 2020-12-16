@@ -139,4 +139,21 @@ describe('logs routes', () => {
     });
 
   });
+
+  it.only('removes a log via DELETE', async() => {
+    const log = await Log.insert({
+      dateOfEvent: '2020-12-15',
+      notes: [
+        'too much salt',
+        'shorten cook time'
+      ],
+      rating: '3.0',
+      recipeId: recipe.id  
+    });
+    
+    const response = await request(app)
+      .delete(`/api/v1/logs/${log.id}`);
+
+    expect(response.body).toEqual(log);
+  });
 });
