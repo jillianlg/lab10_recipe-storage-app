@@ -102,7 +102,6 @@ describe('recipe-lab routes', () => {
     });
   });
 
-
   it('gets all recipes', async() => {
     const recipes = await Promise.all([
       { name: 'cookies', directions: [], ingredients: [] },
